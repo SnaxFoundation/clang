@@ -38,15 +38,15 @@ int c = min(1, 2);
 namespace ImplicitSpecialMembers {
   // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1BC2ERKS0_(
   // CHECK: call {{.*}} @_ZN22ImplicitSpecialMembers1AC1ERKS0_(
-  // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1BC2EOS0_(
+  // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1BC2SNAX0_(
   // CHECK: call {{.*}} @_ZN22ImplicitSpecialMembers1AC1ERKS0_(
   // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1CC2ERKS0_(
   // CHECK: call {{.*}} @_ZN22ImplicitSpecialMembers1AC1ERKS0_(
-  // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1CC2EOS0_(
+  // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1CC2SNAX0_(
   // CHECK: call {{.*}} @_ZN22ImplicitSpecialMembers1AC1ERKS0_(
   // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1DC2ERKS0_(
   // CHECK: call {{.*}} @_ZN22ImplicitSpecialMembers1AC1ERKS0_(
-  // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1DC2EOS0_(
+  // CHECK-LABEL: define {{.*}} @_ZN22ImplicitSpecialMembers1DC2SNAX0_(
   // CHECK: call {{.*}} @_ZN22ImplicitSpecialMembers1AC1ERKS0_(
   // CHECK-LABEL: define {{.*}} @_ZN20OperatorDeleteLookup1AD0Ev(
   // CHECK: call {{.*}}void @_ZN20OperatorDeleteLookup1AdlEPv(

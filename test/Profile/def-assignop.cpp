@@ -13,10 +13,10 @@ struct A {
   // PGOGEN: {{.*}}add{{.*}}%pgocount, 1
   // PGOGEN: store{{.*}}@__profc__ZN1AaSERKS_
   A &operator=(A &&) = default;
-  // PGOGEN: define {{.*}}@_ZN1AaSEOS_
-  // PGOGEN: %pgocount = load {{.*}} @__profc__ZN1AaSEOS_
+  // PGOGEN: define {{.*}}@_ZN1AaSSNAX_
+  // PGOGEN: %pgocount = load {{.*}} @__profc__ZN1AaSSNAX_
   // PGOGEN: {{.*}}add{{.*}}%pgocount, 1
-  // PGOGEN: store{{.*}}@__profc__ZN1AaSEOS_
+  // PGOGEN: store{{.*}}@__profc__ZN1AaSSNAX_
 
   // Check that coverage mapping includes 6 function records including the
   // defaulted copy and move operators: A::operator=

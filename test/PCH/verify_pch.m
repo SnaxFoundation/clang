@@ -24,7 +24,7 @@
 // RUN: %clang_cc1 -isystem %t/usr/include -verify-pch %t.pch
 // RUN: echo ' ' >> %t/usr/include/sys_header.h
 // RUN: not %clang_cc1 -isystem %t/usr/include -verify-pch %t.pch 2> %t.log.3
-// RUN: FileCheck -check-prefix=CHECK-STALE-SYS-H %s < %t.log.3
-// CHECK-STALE-SYS-H: file '{{.*}}sys_header.h' has been modified since the precompiled header '{{.*}}.pch' was built
+// RUN: FileCheck -check-prefix=CHECK-STALE-SNAX-H %s < %t.log.3
+// CHECK-STALE-SNAX-H: file '{{.*}}sys_header.h' has been modified since the precompiled header '{{.*}}.pch' was built
 
 #include <sys_header.h>

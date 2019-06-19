@@ -8,7 +8,7 @@
 // going to choose to use dwarf-based exceptions for it, the front-end needs to
 // match.
 
-// RUN: %clang -target x86_64-apple-macosx10.9 -arch armv7k -miphoneos-version-min=9.0 -c %s -### 2>&1 | FileCheck %s
+// RUN: %clang -target x86_64-apple-macosx10.9 -arch armv7k -miphonsnax-version-min=9.0 -c %s -### 2>&1 | FileCheck %s
 
 // RUN: %clang -target x86_64-apple-macosx10.9 -arch armv7 -mwatchos-version-min=9.0 -c %s -### 2>&1 | FileCheck %s --check-prefix=CHECK-SJLJ
 // CHECK-SJLJ: "-fsjlj-exceptions"

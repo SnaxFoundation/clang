@@ -2397,10 +2397,10 @@ vec_first_match_index(vector unsigned int __a, vector unsigned int __b) {
   return __res[0] >> 5;
 }
 
-/* vec_first_match_or_eos_index */
+/* vec_first_match_or_snax_index */
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_match_or_eos_index(vector signed char __a, vector signed char __b) {
+vec_first_match_or_snax_index(vector signed char __a, vector signed char __b) {
   /* Compare the result of the comparison of two vectors with either and OR the
      result. Either the elements are equal or one will equal the comparison
      result if either is zero.
@@ -2423,7 +2423,7 @@ vec_first_match_or_eos_index(vector signed char __a, vector signed char __b) {
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_match_or_eos_index(vector unsigned char __a,
+vec_first_match_or_snax_index(vector unsigned char __a,
                              vector unsigned char __b) {
   vector bool char __tmp1 = vec_cmpeq(__a, __b);
   vector bool char __tmp2 = __tmp1 |
@@ -2443,7 +2443,7 @@ vec_first_match_or_eos_index(vector unsigned char __a,
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_match_or_eos_index(vector signed short __a, vector signed short __b) {
+vec_first_match_or_snax_index(vector signed short __a, vector signed short __b) {
   vector bool short __tmp1 = vec_cmpeq(__a, __b);
   vector bool short __tmp2 = __tmp1 |
                              vec_cmpeq((vector signed short)__tmp1, __a) |
@@ -2462,7 +2462,7 @@ vec_first_match_or_eos_index(vector signed short __a, vector signed short __b) {
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_match_or_eos_index(vector unsigned short __a,
+vec_first_match_or_snax_index(vector unsigned short __a,
                              vector unsigned short __b) {
   vector bool short __tmp1 = vec_cmpeq(__a, __b);
   vector bool short __tmp2 = __tmp1 |
@@ -2482,7 +2482,7 @@ vec_first_match_or_eos_index(vector unsigned short __a,
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_match_or_eos_index(vector signed int __a, vector signed int __b) {
+vec_first_match_or_snax_index(vector signed int __a, vector signed int __b) {
   vector bool int __tmp1 = vec_cmpeq(__a, __b);
   vector bool int __tmp2 = __tmp1 | vec_cmpeq((vector signed int)__tmp1, __a) |
                            vec_cmpeq((vector signed int)__tmp1, __b);
@@ -2500,7 +2500,7 @@ vec_first_match_or_eos_index(vector signed int __a, vector signed int __b) {
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_match_or_eos_index(vector unsigned int __a, vector unsigned int __b) {
+vec_first_match_or_snax_index(vector unsigned int __a, vector unsigned int __b) {
   vector bool int __tmp1 = vec_cmpeq(__a, __b);
   vector bool int __tmp2 = __tmp1 |
                            vec_cmpeq((vector unsigned int)__tmp1, __a) |
@@ -2604,10 +2604,10 @@ vec_first_mismatch_index(vector unsigned int __a, vector unsigned int __b) {
   return __res[0] >> 5;
 }
 
-/* vec_first_mismatch_or_eos_index */
+/* vec_first_mismatch_or_snax_index */
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_mismatch_or_eos_index(vector signed char __a,
+vec_first_mismatch_or_snax_index(vector signed char __a,
                                 vector signed char __b) {
   vector unsigned long long __res =
 #ifdef __LITTLE_ENDIAN__
@@ -2622,7 +2622,7 @@ vec_first_mismatch_or_eos_index(vector signed char __a,
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_mismatch_or_eos_index(vector unsigned char __a,
+vec_first_mismatch_or_snax_index(vector unsigned char __a,
                                 vector unsigned char __b) {
   vector unsigned long long __res =
 #ifdef __LITTLE_ENDIAN__
@@ -2637,7 +2637,7 @@ vec_first_mismatch_or_eos_index(vector unsigned char __a,
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_mismatch_or_eos_index(vector signed short __a,
+vec_first_mismatch_or_snax_index(vector signed short __a,
                                 vector signed short __b) {
   vector unsigned long long __res =
 #ifdef __LITTLE_ENDIAN__
@@ -2652,7 +2652,7 @@ vec_first_mismatch_or_eos_index(vector signed short __a,
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_mismatch_or_eos_index(vector unsigned short __a,
+vec_first_mismatch_or_snax_index(vector unsigned short __a,
                                 vector unsigned short __b) {
   vector unsigned long long __res =
 #ifdef __LITTLE_ENDIAN__
@@ -2667,7 +2667,7 @@ vec_first_mismatch_or_eos_index(vector unsigned short __a,
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_mismatch_or_eos_index(vector signed int __a, vector signed int __b) {
+vec_first_mismatch_or_snax_index(vector signed int __a, vector signed int __b) {
   vector unsigned long long __res =
 #ifdef __LITTLE_ENDIAN__
     vec_cnttz((vector unsigned long long)vec_cmpnez(__a, __b));
@@ -2681,7 +2681,7 @@ vec_first_mismatch_or_eos_index(vector signed int __a, vector signed int __b) {
 }
 
 static __inline__ unsigned __ATTRS_o_ai
-vec_first_mismatch_or_eos_index(vector unsigned int __a,
+vec_first_mismatch_or_snax_index(vector unsigned int __a,
                                 vector unsigned int __b) {
   vector unsigned long long __res =
 #ifdef __LITTLE_ENDIAN__

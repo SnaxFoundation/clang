@@ -852,45 +852,45 @@ Sample usage:
   }];
 }
 
-def EosioIgnoreDocs : Documentation {
+def SnaxIgnoreDocs : Documentation {
   let Category = DocCatFunction;
   let Content = [{
-The ``eosio::ignore`` attribute marks a template struct as an ignorable type.
+The ``snax::ignore`` attribute marks a template struct as an ignorable type.
   }];
 }
 
-def EosioRicardianDocs : Documentation {
+def SnaxRicardianDocs : Documentation {
   let Category = DocCatFunction;
   let Content = [{
-The ``eosio::ricardian`` attribute specifies filename of ricardian contract.
+The ``snax::ricardian`` attribute specifies filename of ricardian contract.
   }];
 }
 
-def EosioContractDocs : Documentation {
+def SnaxContractDocs : Documentation {
   let Category = DocCatFunction;
   let Content = [{
-The ``eosio::contract`` attribute marks a method as being an eosio contract.
+The ``snax::contract`` attribute marks a method as being an snax contract.
   }];
 }
 
-def EosioWasmImportDocs : Documentation {
+def SnaxWasmImportDocs : Documentation {
   let Category = DocCatFunction;
   let Content = [{
-The ``eosio::wasm_import`` attribute marks a function as a wasm import.
+The ``snax::wasm_import`` attribute marks a function as a wasm import.
   }];
 }
 
-def EosioActionDocs : Documentation {
+def SnaxActionDocs : Documentation {
   let Category = DocCatFunction;
   let Content = [{
-The ``eosio::action`` attribute marks a method as being an eosio action.
+The ``snax::action`` attribute marks a method as being an snax action.
   }];
 }
 
-def EosioTableDocs : Documentation {
+def SnaxTableDocs : Documentation {
   let Category = DocCatFunction;
   let Content = [{
-The ``eosio::table`` attribute marks a record as being an eosio table.
+The ``snax::table`` attribute marks a record as being an snax table.
   }];
 }
 
@@ -1062,7 +1062,7 @@ are:
 
 ``ios``
   Apple's iOS operating system.  The minimum deployment target is specified by
-  the ``-mios-version-min=*version*`` or ``-miphoneos-version-min=*version*``
+  the ``-mios-version-min=*version*`` or ``-miphonsnax-version-min=*version*``
   command-line arguments.
 
 ``macos``

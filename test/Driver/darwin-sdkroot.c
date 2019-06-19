@@ -50,7 +50,7 @@
 // CHECK-IPHONE: "-cc1"
 // CHECK-IPHONE: "-triple" "arm64-apple-ios8.0.0"
 // CHECK-IPHONE: ld
-// CHECK-IPHONE: "-iphoneos_version_min" "8.0.0"
+// CHECK-IPHONE: "-iphonsnax_version_min" "8.0.0"
 //
 //
 // RUN: rm -rf %t/SDKs/iPhoneSimulator8.0.sdk
