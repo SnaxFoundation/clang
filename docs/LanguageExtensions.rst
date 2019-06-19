@@ -1355,7 +1355,7 @@ Objective-C @available
 
 It is possible to use the newest SDK but still build a program that can run on
 older versions of macOS and iOS by passing ``-mmacosx-version-min=`` /
-``-miphonsnax-version-min=``.
+``-miphoneos-version-min=``.
 
 Before LLVM 5.0, when calling a function that exists only in the OS that's
 newer than the target OS (as determined by the minimum deployment version),

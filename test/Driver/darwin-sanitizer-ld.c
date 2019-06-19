@@ -94,7 +94,7 @@
 // CHECK-ASAN-WATCHOSSIM: "-rpath" "{{.*}}lib{{.*}}darwin"
 
 // RUN: %clang -no-canonical-prefixes -### -target armv7-apple-ios  \
-// RUN:   -stdlib=platform -fsanitize=address -miphonsnax-version-min=7 \
+// RUN:   -stdlib=platform -fsanitize=address -miphoneos-version-min=7 \
 // RUN:   %s -o %t.o 2>&1 | FileCheck --check-prefix=CHECK-ASAN-IOS %s
 
 // CHECK-ASAN-IOS: "{{.*}}ld{{(.exe)?}}"
