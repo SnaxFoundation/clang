@@ -319,7 +319,7 @@ number of cross compilers, or may only support a native target.
   When building for Mac OS X, specify the minimum version supported by your
   application.
 
-.. option:: -miphonsnax-version-min
+.. option:: -miphoneos-version-min
 
   When building for iPhone OS, specify the minimum version supported by your
   application.

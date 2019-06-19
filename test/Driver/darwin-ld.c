@@ -267,12 +267,12 @@
 // LINK_X86_64H_MULTIARCH: "x86_64h"
 
 // Check for the linker options to specify the iOS version when the
-// IPHONSNAX_DEPLOYMENT_TARGET variable is used instead of the command-line
+// IPHONEOS_DEPLOYMENT_TARGET variable is used instead of the command-line
 // deployment target options.
-// RUN: env IPHONSNAX_DEPLOYMENT_TARGET=7.0 \
+// RUN: env IPHONEOS_DEPLOYMENT_TARGET=7.0 \
 // RUN:   %clang -target arm64-apple-darwin -### %t.o 2> %t.log
 // RUN: FileCheck -check-prefix=LINK_IPHONSNAX_VERSION_MIN %s < %t.log
-// RUN: env IPHONSNAX_DEPLOYMENT_TARGET=7.0 \
+// RUN: env IPHONEOS_DEPLOYMENT_TARGET=7.0 \
 // RUN:   %clang -target i386-apple-darwin -### %t.o 2> %t.log
 // RUN: FileCheck -check-prefix=LINK_IOS_SIMULATOR_VERSION_MIN %s < %t.log
 // LINK_IPHONSNAX_VERSION_MIN: -iphonsnax_version_min

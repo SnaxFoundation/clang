@@ -1062,7 +1062,7 @@ are:
 
 ``ios``
   Apple's iOS operating system.  The minimum deployment target is specified by
-  the ``-mios-version-min=*version*`` or ``-miphonsnax-version-min=*version*``
+  the ``-mios-version-min=*version*`` or ``-miphoneos-version-min=*version*``
   command-line arguments.
 
 ``macos``

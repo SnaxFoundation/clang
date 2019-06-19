@@ -2168,7 +2168,7 @@ Use Intel MCU ABI
 
 Change indirect jump instructions to inhibit speculation
 
-.. option:: -miphonsnax-version-min=<arg>, -mios-version-min=<arg>
+.. option:: -miphoneos-version-min=<arg>, -mios-version-min=<arg>
 
 .. option:: -mips16
 
