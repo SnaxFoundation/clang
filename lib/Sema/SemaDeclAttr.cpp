@@ -387,18 +387,18 @@ bool Sema::checkStringLiteralArgumentAttr(const AttributeList &AL,
   return true;
 }
 
-static void handleEosioRicardianAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+static void handleSnaxRicardianAttribute(Sema &S, Decl *D, const AttributeList &AL) {
   // Handle the cases where the attribute has a text message.
   StringRef Str, Replacement;
   if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
       !S.checkStringLiteralArgumentAttr(AL, 0, Str))
     return;
    D->addAttr(::new (S.Context)
-                 EosioRicardianAttr(AL.getRange(), S.Context, Str,
+                 SnaxRicardianAttr(AL.getRange(), S.Context, Str,
                                 AL.getAttributeSpellingListIndex()));
 }
 
-static void handleEosioNotifyAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+static void handleSnaxNotifyAttribute(Sema &S, Decl *D, const AttributeList &AL) {
   // Handle the cases where the attribute has a text message.
   StringRef Str, Replacement;
   if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
@@ -406,34 +406,22 @@ static void handleEosioNotifyAttribute(Sema &S, Decl *D, const AttributeList &AL
     return;
    
    D->addAttr(::new (S.Context)
-                 EosioNotifyAttr(AL.getRange(), S.Context, Str,
+                 SnaxNotifyAttr(AL.getRange(), S.Context, Str,
                                 AL.getAttributeSpellingListIndex()));
 }
 
-static void handleEosioContractAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+static void handleSnaxContractAttribute(Sema &S, Decl *D, const AttributeList &AL) {
   // Handle the cases where the attribute has a text message.
   StringRef Str, Replacement;
   if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
       !S.checkStringLiteralArgumentAttr(AL, 0, Str))
     return;
   D->addAttr(::new (S.Context)
-                 EosioContractAttr(AL.getRange(), S.Context, Str,
+                 SnaxContractAttr(AL.getRange(), S.Context, Str,
                                 AL.getAttributeSpellingListIndex()));
 }
 
-static void handleEosioABIAttribute(Sema &S, Decl *D, const AttributeList &AL) {
-  // Handle the cases where the attribute has a text message.
-  StringRef Str, Replacement;
-  if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
-      !S.checkStringLiteralArgumentAttr(AL, 0, Str))
-    return;
-
-  D->addAttr(::new (S.Context)
-                 EosioWasmABIAttr(AL.getRange(), S.Context, Str,
-                                AL.getAttributeSpellingListIndex()));
-}
-
-static void handleEosioWasmActionAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+static void handleSnaxABIAttribute(Sema &S, Decl *D, const AttributeList &AL) {
   // Handle the cases where the attribute has a text message.
   StringRef Str, Replacement;
   if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
@@ -441,11 +429,11 @@ static void handleEosioWasmActionAttribute(Sema &S, Decl *D, const AttributeList
     return;
 
   D->addAttr(::new (S.Context)
-                 EosioWasmActionAttr(AL.getRange(), S.Context, Str,
+                 SnaxWasmABIAttr(AL.getRange(), S.Context, Str,
                                 AL.getAttributeSpellingListIndex()));
 }
 
-static void handleEosioWasmNotifyAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+static void handleSnaxWasmActionAttribute(Sema &S, Decl *D, const AttributeList &AL) {
   // Handle the cases where the attribute has a text message.
   StringRef Str, Replacement;
   if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
@@ -453,11 +441,11 @@ static void handleEosioWasmNotifyAttribute(Sema &S, Decl *D, const AttributeList
     return;
 
   D->addAttr(::new (S.Context)
-                 EosioWasmNotifyAttr(AL.getRange(), S.Context, Str,
+                 SnaxWasmActionAttr(AL.getRange(), S.Context, Str,
                                 AL.getAttributeSpellingListIndex()));
 }
 
-static void handleEosioActionAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+static void handleSnaxWasmNotifyAttribute(Sema &S, Decl *D, const AttributeList &AL) {
   // Handle the cases where the attribute has a text message.
   StringRef Str, Replacement;
   if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
@@ -465,11 +453,11 @@ static void handleEosioActionAttribute(Sema &S, Decl *D, const AttributeList &AL
     return;
 
   D->addAttr(::new (S.Context)
-                 EosioActionAttr(AL.getRange(), S.Context, Str,
+                 SnaxWasmNotifyAttr(AL.getRange(), S.Context, Str,
                                 AL.getAttributeSpellingListIndex()));
 }
 
-static void handleEosioTableAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+static void handleSnaxActionAttribute(Sema &S, Decl *D, const AttributeList &AL) {
   // Handle the cases where the attribute has a text message.
   StringRef Str, Replacement;
   if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
@@ -477,7 +465,19 @@ static void handleEosioTableAttribute(Sema &S, Decl *D, const AttributeList &AL)
     return;
 
   D->addAttr(::new (S.Context)
-                 EosioTableAttr(AL.getRange(), S.Context, Str,
+                 SnaxActionAttr(AL.getRange(), S.Context, Str,
+                                AL.getAttributeSpellingListIndex()));
+}
+
+static void handleSnaxTableAttribute(Sema &S, Decl *D, const AttributeList &AL) {
+  // Handle the cases where the attribute has a text message.
+  StringRef Str, Replacement;
+  if (AL.isArgExpr(0) && AL.getArgAsExpr(0) &&
+      !S.checkStringLiteralArgumentAttr(AL, 0, Str))
+    return;
+
+  D->addAttr(::new (S.Context)
+                 SnaxTableAttr(AL.getRange(), S.Context, Str,
                                 AL.getAttributeSpellingListIndex()));
 }
 
@@ -5916,38 +5916,38 @@ static void ProcessDeclAttribute(Sema &S, Scope *scope, Decl *D,
     S.Diag(AL.getLoc(), diag::err_stmt_attribute_invalid_on_decl)
         << AL.getName() << D->getLocation();
     break;
-  case AttributeList::AT_EosioWasmImport:
-    handleSimpleAttribute<EosioWasmImportAttr>(S, D, AL);
+  case AttributeList::AT_SnaxWasmImport:
+    handleSimpleAttribute<SnaxWasmImportAttr>(S, D, AL);
     break;
-  case AttributeList::AT_EosioWasmEntry:
-    handleSimpleAttribute<EosioWasmEntryAttr>(S, D, AL);
+  case AttributeList::AT_SnaxWasmEntry:
+    handleSimpleAttribute<SnaxWasmEntryAttr>(S, D, AL);
     break;
-  case AttributeList::AT_EosioIgnore:
-    handleSimpleAttribute<EosioIgnoreAttr>(S, D, AL);
+  case AttributeList::AT_SnaxIgnore:
+    handleSimpleAttribute<SnaxIgnoreAttr>(S, D, AL);
     break;
-  case AttributeList::AT_EosioAction:
-    handleEosioActionAttribute(S, D, AL);
+  case AttributeList::AT_SnaxAction:
+    handleSnaxActionAttribute(S, D, AL);
     break;
-  case AttributeList::AT_EosioTable:
-    handleEosioTableAttribute(S, D, AL);
+  case AttributeList::AT_SnaxTable:
+    handleSnaxTableAttribute(S, D, AL);
     break;
-  case AttributeList::AT_EosioWasmABI:
-    handleEosioABIAttribute(S, D, AL);
+  case AttributeList::AT_SnaxWasmABI:
+    handleSnaxABIAttribute(S, D, AL);
     break;
-  case AttributeList::AT_EosioWasmAction:
-    handleEosioWasmActionAttribute(S, D, AL);
+  case AttributeList::AT_SnaxWasmAction:
+    handleSnaxWasmActionAttribute(S, D, AL);
     break;
-  case AttributeList::AT_EosioWasmNotify:
-    handleEosioWasmNotifyAttribute(S, D, AL);
+  case AttributeList::AT_SnaxWasmNotify:
+    handleSnaxWasmNotifyAttribute(S, D, AL);
     break;
-  case AttributeList::AT_EosioContract:
-    handleEosioContractAttribute(S, D, AL);
+  case AttributeList::AT_SnaxContract:
+    handleSnaxContractAttribute(S, D, AL);
     break;
-  case AttributeList::AT_EosioRicardian:
-    handleEosioRicardianAttribute(S, D, AL);
+  case AttributeList::AT_SnaxRicardian:
+    handleSnaxRicardianAttribute(S, D, AL);
     break;
-  case AttributeList::AT_EosioNotify:
-    handleEosioNotifyAttribute(S, D, AL);
+  case AttributeList::AT_SnaxNotify:
+    handleSnaxNotifyAttribute(S, D, AL);
     break;
   case AttributeList::AT_Interrupt:
     handleInterruptAttr(S, D, AL);

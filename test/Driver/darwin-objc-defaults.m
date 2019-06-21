@@ -21,7 +21,7 @@
 // CHECK-CHECK-I386_OSX10_6: darwin-objc-defaults
 
 // RUN: %clang -target x86_64-apple-darwin10 -S -### %s \
-// RUN:   -arch i386 -miphoneos-version-min=3.0 2> %t
+// RUN:   -arch i386 -miphonsnax-version-min=3.0 2> %t
 // RUN: FileCheck --check-prefix CHECK-CHECK-I386_IPHONE3_0 < %t %s
 
 // CHECK-CHECK-I386_IPHONE3_0: "-cc1"
@@ -57,7 +57,7 @@
 // CHECK-CHECK-X86_64_OSX10_6: darwin-objc-defaults
 
 // RUN: %clang -target x86_64-apple-darwin10 -S -### %s \
-// RUN:   -arch x86_64 -miphoneos-version-min=3.0 2> %t
+// RUN:   -arch x86_64 -miphonsnax-version-min=3.0 2> %t
 // RUN: FileCheck --check-prefix CHECK-CHECK-X86_64_IPHONE3_0 < %t %s
 
 // CHECK-CHECK-X86_64_IPHONE3_0: "-cc1"
@@ -85,7 +85,7 @@
 // CHECK-CHECK-ARMV7_OSX10_6: darwin-objc-defaults
 
 // RUN: %clang -target x86_64-apple-darwin10 -S -### %s \
-// RUN:   -arch armv7 -miphoneos-version-min=3.0 2> %t
+// RUN:   -arch armv7 -miphonsnax-version-min=3.0 2> %t
 // RUN: FileCheck --check-prefix CHECK-CHECK-ARMV7_IPHONE3_0 < %t %s
 
 // CHECK-CHECK-ARMV7_IPHONE3_0: "-cc1"

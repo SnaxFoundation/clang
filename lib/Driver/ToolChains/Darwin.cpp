@@ -888,7 +888,7 @@ void DarwinClang::AddLinkARCArgs(const ArgList &Args,
   else if (isTargetIOSSimulator())
     P += "iphonesimulator";
   else if (isTargetIPhoneOS())
-    P += "iphoneos";
+    P += "iphonsnax";
   else
     P += "macosx";
   P += ".a";
@@ -1232,7 +1232,7 @@ struct DarwinPlatform {
       Opt = options::OPT_mmacosx_version_min_EQ;
       break;
     case DarwinPlatformKind::IPhoneOS:
-      Opt = options::OPT_miphoneos_version_min_EQ;
+      Opt = options::OPT_miphonsnax_version_min_EQ;
       break;
     case DarwinPlatformKind::TvOS:
       Opt = options::OPT_mtvos_version_min_EQ;
@@ -1341,7 +1341,7 @@ Optional<DarwinPlatform>
 getDeploymentTargetFromOSVersionArg(DerivedArgList &Args,
                                     const Driver &TheDriver) {
   Arg *OSXVersion = Args.getLastArg(options::OPT_mmacosx_version_min_EQ);
-  Arg *iOSVersion = Args.getLastArg(options::OPT_miphoneos_version_min_EQ,
+  Arg *iOSVersion = Args.getLastArg(options::OPT_miphonsnax_version_min_EQ,
                                     options::OPT_mios_simulator_version_min_EQ);
   Arg *TvOSVersion =
       Args.getLastArg(options::OPT_mtvos_version_min_EQ,
@@ -1385,7 +1385,7 @@ getDeploymentTargetFromEnvironmentVariables(const Driver &TheDriver,
   std::string Targets[Darwin::LastDarwinPlatform + 1];
   const char *EnvVars[] = {
       "MACOSX_DEPLOYMENT_TARGET",
-      "IPHONEOS_DEPLOYMENT_TARGET",
+      "IPHONSNAX_DEPLOYMENT_TARGET",
       "TVOS_DEPLOYMENT_TARGET",
       "WATCHOS_DEPLOYMENT_TARGET",
   };
@@ -1401,7 +1401,7 @@ getDeploymentTargetFromEnvironmentVariables(const Driver &TheDriver,
       (!Targets[Darwin::IPhoneOS].empty() || !Targets[Darwin::TvOS].empty())) {
     TheDriver.Diag(diag::err_drv_conflicting_deployment_targets)
         << "WATCHOS_DEPLOYMENT_TARGET"
-        << (!Targets[Darwin::IPhoneOS].empty() ? "IPHONEOS_DEPLOYMENT_TARGET"
+        << (!Targets[Darwin::IPhoneOS].empty() ? "IPHONSNAX_DEPLOYMENT_TARGET"
                                                : "TVOS_DEPLOYMENT_TARGET");
   }
 
@@ -1409,7 +1409,7 @@ getDeploymentTargetFromEnvironmentVariables(const Driver &TheDriver,
   if (!Targets[Darwin::TvOS].empty() && !Targets[Darwin::IPhoneOS].empty()) {
     TheDriver.Diag(diag::err_drv_conflicting_deployment_targets)
         << "TVOS_DEPLOYMENT_TARGET"
-        << "IPHONEOS_DEPLOYMENT_TARGET";
+        << "IPHONSNAX_DEPLOYMENT_TARGET";
   }
 
   // Allow conflicts among OSX and iOS for historical reasons, but choose the
@@ -2156,7 +2156,7 @@ void Darwin::addMinVersionArgs(const ArgList &Args,
   else if (isTargetIOSSimulator())
     CmdArgs.push_back("-ios_simulator_version_min");
   else if (isTargetIOSBased())
-    CmdArgs.push_back("-iphoneos_version_min");
+    CmdArgs.push_back("-iphonsnax_version_min");
   else {
     assert(isTargetMacOS() && "unexpected target");
     CmdArgs.push_back("-macosx_version_min");

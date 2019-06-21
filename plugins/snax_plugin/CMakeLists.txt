@@ -1,0 +1,1 @@
+add_llvm_loadable_module(snax_plugin snax_autogen.cpp PLUGIN_TOOL clang)

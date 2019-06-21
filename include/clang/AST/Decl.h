@@ -1941,14 +1941,14 @@ public:
 
   void setRangeEnd(SourceLocation E) { EndRangeLoc = E; }
 
-  bool isEosioWasmABI()const;
+  bool isSnaxWasmABI()const;
   std::string getWasmABI()const;
-  bool isEosioWasmEntry()const;
-  bool isEosioWasmImport()const;
-  bool isEosioWasmAction()const;
-  std::string getEosioWasmAction()const;
-  bool isEosioWasmNotify()const;
-  std::string getEosioWasmNotify()const;
+  bool isSnaxWasmEntry()const;
+  bool isSnaxWasmImport()const;
+  bool isSnaxWasmAction()const;
+  std::string getSnaxWasmAction()const;
+  bool isSnaxWasmNotify()const;
+  std::string getSnaxWasmNotify()const;
 
   SourceRange getSourceRange() const override LLVM_READONLY;
 
@@ -3645,7 +3645,7 @@ public:
     return const_cast<RecordDecl*>(this)->getMostRecentDecl();
   }
 
-  bool isEosioIgnore() const;
+  bool isSnaxIgnore() const;
 
   bool hasFlexibleArrayMember() const { return HasFlexibleArrayMember; }
   void setHasFlexibleArrayMember(bool V) { HasFlexibleArrayMember = V; }

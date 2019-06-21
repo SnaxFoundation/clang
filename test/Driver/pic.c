@@ -219,7 +219,7 @@
 // RUN: %clang -c %s -target x86_64-apple-darwin -mdynamic-no-pic -fpie -### 2>&1 \
 // RUN:   | FileCheck %s --check-prefix=CHECK-DYNAMIC-NO-PIC-64
 //
-// Checks for ARM+Apple+IOS including -fapple-kext, -mkernel, and iphoneos
+// Checks for ARM+Apple+IOS including -fapple-kext, -mkernel, and iphonsnax
 // version boundaries.
 // RUN: %clang -c %s -target armv7-apple-ios6 -fapple-kext -### 2>&1 \
 // RUN:   | FileCheck %s --check-prefix=CHECK-PIC2

@@ -6,17 +6,17 @@
 // for them.
 // CHECK-DAG: define {{.*}}_ZN4BaseC2Ev
 // CHECK-DAG: define {{.*}}_ZN4BaseC2ERKS_
-// CHECK-DAG: define {{.*}}_ZN4BaseC2EOS_
+// CHECK-DAG: define {{.*}}_ZN4BaseC2SNAX_
 // CHECK-DAG: __profc__ZN7DerivedC2Ev,
 // CHECK-DAG: __profc__ZN7DerivedC2ERKS_
-// CHECK-DAG: __profc__ZN7DerivedC2EOS_
+// CHECK-DAG: __profc__ZN7DerivedC2SNAX_
 // CHECK-NOT: @__profc__ZN4BaseC2Ev =
 // CHECK-NOT: @__profc__ZN4BaseC2ERKS_
-// CHECK-NOT: @__profc__ZN4BaseC2EOS_
+// CHECK-NOT: @__profc__ZN4BaseC2SNAX_
 //
 // Implicit assignment operators are generated for Base. We should not emit counters
 // for them.
-// CHECK-NOT: @__profc__ZN4BaseaSEOS_
+// CHECK-NOT: @__profc__ZN4BaseaSSNAX_
 // CHECK-NOT: @__profc__ZN4BaseaSERKS_
 
 struct BaseBase {

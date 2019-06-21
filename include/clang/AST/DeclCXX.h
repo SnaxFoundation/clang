@@ -725,15 +725,15 @@ public:
 
   /// Iterator that traverses the base classes of a class.
   using base_class_const_iterator = const CXXBaseSpecifier *;
-  bool isEosioContract() const { return hasAttr<EosioContractAttr>(); }
-  bool isEosioAction() const { return hasAttr<EosioActionAttr>(); }
-  bool isEosioTable() const { return hasAttr<EosioTableAttr>(); }
-  bool isEosioIgnore() const { return hasAttr<EosioIgnoreAttr>(); }
-  bool hasEosioRicardian() const { return hasAttr<EosioRicardianAttr>(); }
-  EosioActionAttr* getEosioActionAttr() const { return getAttr<EosioActionAttr>(); }
-  EosioTableAttr*  getEosioTableAttr() const { return getAttr<EosioTableAttr>(); }
-  EosioContractAttr*  getEosioContractAttr() const { return getAttr<EosioContractAttr>(); }
-  EosioRicardianAttr*  getEosioRicardianAttr() const { return getAttr<EosioRicardianAttr>(); }
+  bool isSnaxContract() const { return hasAttr<SnaxContractAttr>(); }
+  bool isSnaxAction() const { return hasAttr<SnaxActionAttr>(); }
+  bool isSnaxTable() const { return hasAttr<SnaxTableAttr>(); }
+  bool isSnaxIgnore() const { return hasAttr<SnaxIgnoreAttr>(); }
+  bool hasSnaxRicardian() const { return hasAttr<SnaxRicardianAttr>(); }
+  SnaxActionAttr* getSnaxActionAttr() const { return getAttr<SnaxActionAttr>(); }
+  SnaxTableAttr*  getSnaxTableAttr() const { return getAttr<SnaxTableAttr>(); }
+  SnaxContractAttr*  getSnaxContractAttr() const { return getAttr<SnaxContractAttr>(); }
+  SnaxRicardianAttr*  getSnaxRicardianAttr() const { return getAttr<SnaxRicardianAttr>(); }
 
   CXXRecordDecl *getCanonicalDecl() override {
     return cast<CXXRecordDecl>(RecordDecl::getCanonicalDecl());
@@ -2067,14 +2067,14 @@ public:
 
   bool isStatic() const;
   bool isInstance() const { return !isStatic(); }
-  bool isEosioAction() const { return hasAttr<EosioActionAttr>(); }
-  bool isEosioNotify() const { return hasAttr<EosioNotifyAttr>(); }
-  bool isEosioContract() const { return hasAttr<EosioContractAttr>(); }
-  bool hasEosioRicardian() const { return hasAttr<EosioRicardianAttr>(); }
-  EosioActionAttr* getEosioActionAttr() const { return getAttr<EosioActionAttr>(); }
-  EosioNotifyAttr* getEosioNotifyAttr() const { return getAttr<EosioNotifyAttr>(); }
-  EosioContractAttr* getEosioContractAttr() const { return getAttr<EosioContractAttr>(); }
-  EosioRicardianAttr* getEosioRicardianAttr() const { return getAttr<EosioRicardianAttr>(); }
+  bool isSnaxAction() const { return hasAttr<SnaxActionAttr>(); }
+  bool isSnaxNotify() const { return hasAttr<SnaxNotifyAttr>(); }
+  bool isSnaxContract() const { return hasAttr<SnaxContractAttr>(); }
+  bool hasSnaxRicardian() const { return hasAttr<SnaxRicardianAttr>(); }
+  SnaxActionAttr* getSnaxActionAttr() const { return getAttr<SnaxActionAttr>(); }
+  SnaxNotifyAttr* getSnaxNotifyAttr() const { return getAttr<SnaxNotifyAttr>(); }
+  SnaxContractAttr* getSnaxContractAttr() const { return getAttr<SnaxContractAttr>(); }
+  SnaxRicardianAttr* getSnaxRicardianAttr() const { return getAttr<SnaxRicardianAttr>(); }
 
   /// Returns true if the given operator is implicitly static in a record
   /// context.
